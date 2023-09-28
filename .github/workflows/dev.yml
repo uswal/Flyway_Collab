@@ -1,4 +1,4 @@
-name: Ujjawal-dev-build
+name: dev-build
 
 on:
   # push:

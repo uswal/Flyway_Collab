@@ -1,4 +1,4 @@
-name: Ujjawal-UAT-build
+name: UAT-build
 
 on:
   push:
