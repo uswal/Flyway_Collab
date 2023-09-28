@@ -1,0 +1,30 @@
+name: UAT-build
+
+on:
+  push:
+    branches: ["UAT"]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Change directory
+        run: cd $GITHUB_WORKSPACE
+
+      - name: Java version
+        run: java --version
+
+      - name: Download flyway
+        run: wget https://download.red-gate.com/checkforupdates/FlywayDesktopLinuxX64.tar.gz
+
+      - name: Run flyway
+        run: |    
+          tar -xzf FlywayDesktopLinuxX64.tar.gz
+          pwd
+          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/flyway/
+          export JAVA_ARGS=--add-opens=java.base/java.nio=ALL-UNNAMED
+          flyway -color=always -configFiles=./flyway_conf/uat_phdata.conf -X migrate  
