@@ -25,6 +25,6 @@ jobs:
         run: |    
           tar -xzf FlywayDesktopLinuxX64.tar.gz
           pwd
-          export PATH=$PATH:/home/runner/work/Flyway_CICD_Task/Flyway_CICD_Task/flyway/
+          export PATH=$PATH:/home/runner/work/Flyway_Collab/Flyway_Collab/flyway/
           export JAVA_ARGS=--add-opens=java.base/java.nio=ALL-UNNAMED
           flyway -color=always -configFiles=./flyway_conf/dev_phdata.conf -X migrate
