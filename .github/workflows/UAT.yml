@@ -1,8 +1,8 @@
-name: Ujjawal-UAT-build
+name: UAT-build
 
 on:
   push:
-    branches: ["UAT"]
+    branches: ["UAT","uat"]
 
   workflow_dispatch:
 
