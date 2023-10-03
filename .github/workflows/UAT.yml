@@ -27,4 +27,4 @@ jobs:
           pwd
           export PATH=$PATH:/home/runner/work/Flyway_Collab/Flyway_Collab/flyway/
           export JAVA_ARGS=--add-opens=java.base/java.nio=ALL-UNNAMED
-          flyway -color=always  -user=CICD_SVC -password Snowflakedemo#1 -configFiles=./flyway_conf/uat_phdata.conf -X migrate 
+          flyway -user=CICD_SVC -password=Snowflakedemo#1 -color=always -configFiles=./flyway_conf/uat_phdata.conf -X migrate 
